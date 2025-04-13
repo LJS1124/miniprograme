@@ -1,0 +1,161 @@
+/* game.wxss */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 60rpx 40rpx;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.timer {
+  display: flex;
+  align-items: baseline;
+  font-weight: bold;
+}
+
+.time {
+  font-size: 80rpx;
+  line-height: 80rpx;
+}
+
+.unit {
+  font-size: 32rpx;
+  margin-left: 8rpx;
+}
+
+.time-ending {
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #ff5252;
+}
+
+.warning {
+  color: #ff5252;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scores {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.word-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+  padding: 80rpx 40rpx;
+  width: 80%;
+  min-height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8rpx 30rpx rgba(0, 0, 0, 0.15);
+  margin: 60rpx 0;
+}
+
+.word {
+  font-size: 80rpx;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.difficulty {
+  font-size: 28rpx;
+  color: #666;
+  padding: 8rpx 24rpx;
+  background-color: #f0f0f0;
+  border-radius: 20rpx;
+}
+
+.word-card.animate {
+  animation: cardChange 0.3s ease-in-out;
+}
+
+@keyframes cardChange {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 60rpx;
+}
+
+.btn-pass,
+.btn-correct {
+  width: 45%;
+  height: 100rpx;
+  border-radius: 50rpx;
+  font-size: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.btn-pass {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border: 2rpx solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-correct {
+  background-color: #fff;
+  color: #333;
+}
+
+.btn-hover {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+.footer-actions {
+  margin-bottom: 40rpx;
+  width: 60%;
+}
+
+.btn-end-game {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 32rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+}
+
+button[disabled] {
+  opacity: 0.5;
+}

@@ -1,0 +1,56 @@
+<!--settings.wxml-->
+<navigation-bar title="游戏设置" back="{{true}}" color="black" background="#FFF" bind:back="goBack"></navigation-bar>
+
+<view class="page-container">
+  <view class="settings-container">
+    <!-- 游戏时间设置 -->
+    <view class="setting-section">
+      <view class="section-title">游戏时间</view>
+      <view class="options-row">
+        <block wx:for="{{durationOptions}}" wx:key="value">
+          <view class="option-item {{gameDuration === item.value ? 'selected' : ''}}" 
+                catchtap="setDuration" data-value="{{item.value}}">
+            {{item.label}}
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 词库难度设置 -->
+    <view class="setting-section">
+      <view class="section-title">词库难度</view>
+      <view class="options-row">
+        <block wx:for="{{difficultyOptions}}" wx:key="value">
+          <view class="option-item {{difficulty === item.value ? 'selected' : ''}}" 
+                catchtap="setDifficulty" data-value="{{item.value}}">
+            {{item.label}}
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 音效设置 -->
+    <view class="setting-section">
+      <view class="section-title">音效设置</view>
+      <view class="toggle-row">
+        <view class="toggle-item">
+          <view class="toggle-label">音效</view>
+          <view class="toggle-switch {{soundEffects ? 'active' : ''}}" catchtap="toggleSoundEffects">
+            <view class="toggle-button"></view>
+          </view>
+        </view>
+        <view class="toggle-item">
+          <view class="toggle-label">背景音乐</view>
+          <view class="toggle-switch {{backgroundMusic ? 'active' : ''}}" catchtap="toggleBackgroundMusic">
+            <view class="toggle-button"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 确认按钮 -->
+    <view class="btn-container">
+      <view class="btn btn-primary" catchtap="saveSettings">确认</view>
+    </view>
+  </view>
+</view> 

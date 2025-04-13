@@ -1,0 +1,65 @@
+<!--prepare.wxml-->
+<navigation-bar title="游戏准备" back="{{true}}" color="black" background="#FFF" bind:back="goBack"></navigation-bar>
+
+<view class="page-container">
+  <view class="prepare-container">
+    <block wx:if="{{!countdownActive}}">
+      <!-- 队伍信息展示 -->
+      <view class="team-info" style="background-color: {{teamColors[teamIndex]}}">
+        <view class="team-name">{{teamNames[teamIndex]}}</view>
+        <view class="team-turn">准备开始</view>
+      </view>
+
+      <!-- 游戏信息提示 -->
+      <view class="game-info">
+        <view class="info-item">
+          <view class="info-label">游戏时间</view>
+          <view class="info-value">{{settings.gameDuration}} 秒</view>
+        </view>
+        <view class="info-item">
+          <view class="info-label">词库</view>
+          <view class="info-value">
+            <block wx:if="{{selectedLibrary === 'random'}}">随机词库</block>
+            <block wx:elif="{{selectedLibrary === 'basic'}}">基础词库</block>
+            <block wx:elif="{{selectedLibrary === 'animals'}}">动物词库</block>
+            <block wx:elif="{{selectedLibrary === 'movies'}}">电影词库</block>
+          </view>
+        </view>
+        <view class="info-item">
+          <view class="info-label">难度</view>
+          <view class="info-value">
+            <block wx:if="{{settings.difficulty === 'easy'}}">简单</block>
+            <block wx:elif="{{settings.difficulty === 'medium'}}">中等</block>
+            <block wx:elif="{{settings.difficulty === 'hard'}}">困难</block>
+          </view>
+        </view>
+      </view>
+
+      <!-- 游戏提示 -->
+      <view class="game-tips">
+        <view class="tips-title">游戏提示</view>
+        <view class="tips-text">
+          1. 请将手机交给猜词者，并确保猜词者不要看到屏幕。
+          2. 其他玩家通过语言或动作描述词语，但不能直接说出词语。
+          3. 猜对后点击左侧区域，跳过则点击右侧区域。
+          4. 规定时间内猜对词语越多，分数越高！
+        </view>
+      </view>
+
+      <!-- 开始按钮 -->
+      <view class="btn-container">
+        <view class="btn btn-primary" catchtap="startGame">
+          开始游戏
+        </view>
+      </view>
+    </block>
+
+    <!-- 倒计时显示 -->
+    <block wx:if="{{countdownActive}}">
+      <view class="countdown-container">
+        <view class="countdown-value" style="color: {{teamColors[teamIndex]}}">{{countdownValue}}</view>
+        <view class="countdown-text">游戏即将开始...</view>
+      </view>
+    </block>
+  </view>
+</view> 

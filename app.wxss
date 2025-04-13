@@ -7,4 +7,108 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
+/* 全局颜色变量 */
+page {
+  --primary-color: #4a90e2; /* 主色调-蓝色 */
+  --secondary-color: #f5a623; /* 辅助色-橙色 */
+  --success-color: #7ed321; /* 猜对-绿色 */
+  --error-color: #d0021b; /* 跳过-红色 */
+  --bg-color: #f8f8f8; /* 背景色-浅灰色 */
+  --text-primary: #333333; /* 主要文字-深灰色 */
+  --text-secondary: #666666; /* 次要文字-中灰色 */
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+    "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+/* 通用按钮样式 */
+.btn {
+  padding: 20rpx 40rpx;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 20rpx 0;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-error {
+  background-color: var(--error-color);
+  color: white;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin: 20rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 文本样式 */
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.sub-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 16rpx;
+}
+
+.text {
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+
+/* 弹性布局工具类 */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+}

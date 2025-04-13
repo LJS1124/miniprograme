@@ -1,0 +1,265 @@
+/* result.wxss */
+.page-container {
+  padding: 20rpx;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+.result-container {
+  padding: 0 0 40rpx;
+  border-radius: 16rpx;
+  background-color: #ffffff;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 结果头部样式 */
+.result-header {
+  padding: 60rpx 40rpx;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.team-name {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.result-score {
+  text-align: center;
+}
+
+.score-value {
+  font-size: 100rpx;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 28rpx;
+  opacity: 0.9;
+  margin-top: 8rpx;
+}
+
+/* 词语列表样式 */
+.words-container {
+  padding: 40rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.word-section {
+  margin-bottom: 40rpx;
+}
+
+.word-section-title {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #666666;
+  margin-bottom: 16rpx;
+}
+
+.word-status-icon {
+  display: inline-block;
+  width: 36rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+  font-size: 24rpx;
+}
+
+.word-status-icon.correct {
+  background-color: #7ed321;
+  color: #ffffff;
+}
+
+.word-status-icon.skipped {
+  background-color: #d0021b;
+  color: #ffffff;
+}
+
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.word-item {
+  background-color: #f5f5f5;
+  padding: 12rpx 24rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.word-empty {
+  font-size: 28rpx;
+  color: #999999;
+  padding: 20rpx 0;
+}
+
+/* 操作按钮样式 */
+.action-buttons {
+  padding: 0 40rpx;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  transition: all 0.3s;
+  margin-bottom: 20rpx;
+}
+
+.btn-primary {
+  background-color: #4a90e2;
+  color: #ffffff;
+  box-shadow: 0 4rpx 10rpx rgba(74, 144, 226, 0.3);
+}
+
+.btn-secondary {
+  background-color: #f5f5f5;
+  color: #333333;
+  flex: 1;
+}
+
+.btn-row {
+  display: flex;
+  gap: 20rpx;
+}
+
+.btn:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* 庆祝动画效果 */
+.confetti-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.confetti {
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #ffd700;
+  opacity: 0.8;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.confetti-1 {
+  left: 10%;
+  background-color: #ff3b30;
+  animation-name: confetti-1;
+}
+
+.confetti-2 {
+  left: 30%;
+  background-color: #4cd964;
+  animation-name: confetti-2;
+}
+
+.confetti-3 {
+  left: 50%;
+  background-color: #ffcc00;
+  animation-name: confetti-3;
+}
+
+.confetti-4 {
+  left: 70%;
+  background-color: #5ac8fa;
+  animation-name: confetti-4;
+}
+
+.confetti-5 {
+  left: 90%;
+  background-color: #ff9500;
+  animation-name: confetti-5;
+}
+
+.confetti-6 {
+  left: 20%;
+  top: 20%;
+  background-color: #ff2d55;
+  animation-name: confetti-6;
+}
+
+@keyframes confetti-1 {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(1000%) rotate(360deg);
+  }
+}
+
+@keyframes confetti-2 {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(800%) rotate(-180deg);
+  }
+}
+
+@keyframes confetti-3 {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(900%) rotate(180deg);
+  }
+}
+
+@keyframes confetti-4 {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(700%) rotate(-360deg);
+  }
+}
+
+@keyframes confetti-5 {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(1000%) rotate(360deg);
+  }
+}
+
+@keyframes confetti-6 {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(500%) rotate(-360deg);
+  }
+}

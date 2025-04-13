@@ -59,6 +59,7 @@ Component({
   },
   lifetimes: {
     attached() {
+      console.log('导航栏组件加载');
       const rect = wx.getMenuButtonBoundingClientRect()
       wx.getSystemInfo({
         success: (res) => {
@@ -93,10 +94,17 @@ Component({
       })
     },
     back() {
+      console.log('导航栏返回按钮点击');
       const data = this.data
       if (data.delta) {
         wx.navigateBack({
-          delta: data.delta
+          delta: data.delta,
+          fail: (err) => {
+            console.error('导航返回失败:', err);
+            wx.reLaunch({
+              url: '/pages/index/index'
+            });
+          }
         })
       }
       this.triggerEvent('back', { delta: data.delta }, {})

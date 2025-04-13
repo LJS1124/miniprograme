@@ -1,0 +1,32 @@
+<!--game.wxml-->
+<view class="game-container" style="background-color:{{teamColors[teamIndex]}}">
+  <view class="header">
+    <view class="timer {{timeWarning ? 'warning' : ''}}">
+      <block wx:if="{{!isEnding}}">
+        <text class="time">{{displayTime}}</text>
+        <text class="unit">秒</text>
+      </block>
+      <block wx:else>
+        <text class="time-ending">时间到!</text>
+      </block>
+    </view>
+    <view class="scores">
+      <text>{{correctCount}} 对 | {{passCount}} 跳过</text>
+    </view>
+  </view>
+  
+  <view class="word-card {{showWordAnimation ? 'animate' : ''}}">
+    <text class="word">{{currentWord}}</text>
+    <text class="difficulty">{{difficultyText[difficulty]}}</text>
+  </view>
+  
+  <view class="action-buttons">
+    <button class="btn-pass" bindtap="passWord" hover-class="btn-hover" disabled="{{isEnding}}">跳过</button>
+    <button class="btn-correct" bindtap="correctWord" hover-class="btn-hover" disabled="{{isEnding}}">正确</button>
+  </view>
+  
+  <!-- 结束游戏按钮，用户可以提前结束 -->
+  <view class="footer-actions">
+    <button class="btn-end-game" bindtap="endGame" disabled="{{isEnding}}">结束游戏</button>
+  </view>
+</view> 

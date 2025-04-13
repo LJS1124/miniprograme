@@ -1,7 +1,64 @@
 <!--index.wxml-->
-<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    Weixin
+<navigation-bar title="小小猜词" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class="page-container">
+  <view class="header">
+    <view class="logo-container">
+      <view class="title-text">小小猜词</view>
+      <view class="subtitle-text">欢乐猜词，欢乐无限!</view>
+    </view>
   </view>
-</scroll-view>
+  
+  <view class="content">
+    <view class="btn-container">
+      <view class="btn btn-primary" catchtap="startGame">开始游戏</view>
+      <view class="btn btn-secondary" catchtap="showRules">规则说明</view>
+    </view>
+
+    <view class="word-library-section">
+      <view class="section-title">词库选择</view>
+      <view class="library-options flex-row flex-wrap">
+        <view class="library-option {{selectedLibrary === 'random' ? 'selected' : ''}}" 
+              catchtap="selectLibrary" data-library="random">
+          随机词库
+        </view>
+        <view class="library-option {{selectedLibrary === 'basic' ? 'selected' : ''}}" 
+              catchtap="selectLibrary" data-library="basic">
+          基础词库
+        </view>
+        <view class="library-option {{selectedLibrary === 'animals' ? 'selected' : ''}}" 
+              catchtap="selectLibrary" data-library="animals">
+          动物词库
+        </view>
+        <view class="library-option {{selectedLibrary === 'movies' ? 'selected' : ''}}" 
+              catchtap="selectLibrary" data-library="movies">
+          电影词库
+        </view>
+      </view>
+    </view>
+
+    <view class="bottom-buttons">
+      <view class="btn" catchtap="goToSettings">
+        <text class="iconfont icon-setting"></text>
+        设置
+      </view>
+      <view class="btn" catchtap="goToRanking">
+        <text class="iconfont icon-rank"></text>
+        排行榜
+      </view>
+    </view>
+  </view>
+
+  <!-- 规则说明弹窗 -->
+  <view class="rules-modal" wx:if="{{showRulesModal}}">
+    <view class="modal-content">
+      <view class="modal-title">游戏规则</view>
+      <view class="modal-text">
+        1. 一名玩家手持设备，屏幕上显示需要猜的词语，但持有者看不到。
+        2. 其他玩家通过语言或肢体动作描述该词语，持有者根据描述进行猜测。
+        3. 猜对后，持有者点击左半边区域表示正确；若放弃则点击右半边区域表示跳过。
+        4. 每轮有时间限制，规定时间内猜对的词语数量越多，得分越高。
+      </view>
+      <view class="btn btn-primary" catchtap="closeRulesModal">知道了</view>
+    </view>
+  </view>
+</view>
